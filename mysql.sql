@@ -29,3 +29,8 @@ create table if not exists pedidos(
     foreign key(id_clientesfk) references clientes(id),
 	foreign key(id_funcionariosfk) references funcionarios(id)
 );
+
+create table if not exists qtd_gas(
+	id int not null primary key,
+	quantidade int not null
+);
