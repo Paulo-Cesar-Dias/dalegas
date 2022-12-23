@@ -11,7 +11,9 @@ create table if not exists caixa (
 	id int auto_increment not null primary key, #código de transação
     dia date not null,
     hora varchar(7),
-    movimentacaino_caixa int not null
+    movimentacao_no_caixa int not null,
+    id_funcionariosfk int not null,
+    foreign key(id_funcionariosfk) references funcionarios(id)
 );
 
 create table if not exists clientes(
@@ -32,5 +34,7 @@ create table if not exists pedidos(
 
 create table if not exists qtd_gas(
 	id int not null primary key,
-	quantidade int not null
+	quantidade int not null,
+    id_pedidosfk int not null,
+    foreign key(id_pedidosfk) references pedidos(id)
 );
